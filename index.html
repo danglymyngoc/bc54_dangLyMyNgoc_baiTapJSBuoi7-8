@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập JS buổi 7-8</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5 w-75 ">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập vào số nguyên"
+          id="mangSoNguyen"
+        />
+        <div class="input-group-prepend">
+          <button onclick="btnThemSoNguyen()" class="btn btn-success">
+            Thêm số
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="alert alert-success" id="inMangSoNguyen"></p>
+      </div>
+      <hr />
+      <!-- Tổng các số dương trong mảng -->
+      <div class="form-group">
+        <p>Tổng các số dương trong mảng</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="tongSoDuong" readonly />
+        <div class="input-group-prepend">
+          <button onclick="btnTinhTong()" class="btn btn-success">
+            Tính tổng
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- Đếm số phần tử dương trong mảng -->
+      <div class="form-group">
+        <p>Đếm số phần tử dương trong mảng</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="demSoDuong" readonly />
+        <div class="input-group-prepend">
+          <button onclick="btnDemSoDuong()" class="btn btn-success">
+            Đếm số dương
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- Số nhỏ nhất trong mảng -->
+      <div class="form-group">
+        <p>Số nhỏ nhất trong mảng</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="soNhoNhat" readonly />
+        <div class="input-group-prepend">
+          <button onclick="btnSoNhoNhat()" class="btn btn-success">
+            Tìm số nhỏ nhất
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- Số dương nhỏ nhất trong mảng -->
+      <div class="form-group">
+        <p>Số dương nhỏ nhất trong mảng</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="soDuongNhoNhat" readonly />
+        <div class="input-group-prepend">
+          <button onclick="btnSoDuongNhoNhat()" class="btn btn-success">
+            Tìm số dương nhỏ nhất
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- Số chẵn cuối cùng trong mảng -->
+      <div class="form-group">
+        <p>Số chẵn cuối cùng trong mảng</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="soChanCuoiCung" readonly />
+        <div class="input-group-prepend">
+          <button onclick="btnSoChanCuoiCung()" class="btn btn-success">
+            Tìm số chẵn
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- Đổi chỗ 2 giá trị trong mảng theo vị trí -->
+      <div class="form-group">
+        <p>Đổi chỗ 2 giá trị trong mảng theo vị trí</p>
+      </div>
+      <div class="form-group row">
+        <div class="col-6">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nhập vị trí 1"
+            id="index1"
+          />
+        </div>
+        <div class="col-6">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nhập vị trí 2"
+            id="index2"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <button onclick="btnDoiViTri()" class="btn btn-success">Đổi chỗ</button>
+      </div>
+      <div class="form-group">
+        <p class="alert alert-success" id="doiViTri"></p>
+      </div>
+      <hr />
+      <!-- Sắp xếp mảng theo thứ tự tăng dần -->
+      <div class="form-group">
+        <p>Sắp xếp mảng theo thứ tự tăng dần</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="mangTangDan" readonly />
+        <div class="input-group-prepend">
+          <button onclick="btnSapXepTangDan()" class="btn btn-success">
+            Sắp xếp
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- Tìm số nguyên tố đầu tiên trong mảng -->
+      <div class="form-group">
+        <p>Tìm số nguyên tố đầu tiên trong mảng</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="soNguyenTo" readonly />
+        <div class="input-group-prepend">
+          <button onclick="btnTimSNT()" class="btn btn-success">
+            Tìm số nguyên tố
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- Nhập số thực -->
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập vào số thực"
+          id="mangSoThuc"
+        />
+        <div class="input-group-prepend">
+          <button onclick="btnThemSoThuc()" class="btn btn-success">
+            Thêm số
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <p class="alert alert-success" id="newArr"></p>
+      </div>
+      <hr />
+      <!-- Tìm số phần tử là số nguyên trong mảng -->
+      <div class="form-group">
+        <p>Tìm số phần tử là số nguyên trong mảng</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="soNguyen" readonly />
+        <div class="input-group-prepend">
+          <button onclick="btnTimSoNguyen()" class="btn btn-success">
+            Tìm số nguyên
+          </button>
+        </div>
+      </div>
+      <hr />
+      <!-- So sánh số phần tử dương và âm trong mảng -->
+      <div class="form-group">
+        <p>So sánh số phần tử dương và âm trong mảng</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="soSanh" readonly />
+        <div class="input-group-prepend mb-5">
+          <button onclick="btnSoSanh()" class="btn btn-success">So sánh</button>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
